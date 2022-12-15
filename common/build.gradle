@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.zzh'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'junit:junit:4.13.1'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.springframework.boot:spring-boot-starter-test:2.7.5'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.5'
+//    implementation('org.springframework.boot:spring-boot-starter-log4j2:3.0.0')
+}
+
+test {
+    useJUnitPlatform()
+}

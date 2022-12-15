@@ -1,3 +1,5 @@
 rootProject.name = 'tools'
 include 'kafka-streams'
+include 'kafka'
+include 'common'
 

@@ -19,7 +19,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @SpringBootTest(classes = KafkaStreamApplication.class)
 @RunWith(SpringRunner.class)
 @WebAppConfiguration
-
 public class TestOne {
     private final Logger logger = LoggerFactory.getLogger(TestOne.class);
 
