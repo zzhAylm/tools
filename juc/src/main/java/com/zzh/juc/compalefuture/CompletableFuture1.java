@@ -16,6 +16,8 @@ public class CompletableFuture1 {
         CompletableFuture<Void> future=CompletableFuture.runAsync(()->{
             System.out.println("异步调用无返回值");
         });
+
+        //.get()方法，执行异步任务，并返回结果
         future.get();
 
         CompletableFuture<String> stringCompletableFuture = CompletableFuture.supplyAsync(() -> {

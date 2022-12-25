@@ -3,4 +3,5 @@ include 'kafka-streams'
 include 'kafka'
 include 'common'
 include 'juc'
+include 'juc2'
 
