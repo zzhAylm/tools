@@ -1,7 +1,8 @@
 rootProject.name = 'tools'
 include 'kafka-streams'
 include 'kafka'
-include 'common'
 include 'juc'
 include 'juc2'
+include 'hutool'
+include 'spring'
 
