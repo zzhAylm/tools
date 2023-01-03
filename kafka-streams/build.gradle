@@ -22,6 +22,7 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.5'
     implementation 'org.xerial:sqlite-jdbc:3.39.4.1'
     implementation 'org.apache.kafka:kafka-streams:3.3.1'
+    implementation("org.apache.kafka:kafka-clients:3.3.1")
     implementation('com.sparkjava:spark-core:2.5.4'){
        transitive(false)
     }
