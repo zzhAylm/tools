@@ -26,6 +26,8 @@ dependencies {
     implementation('com.sparkjava:spark-core:2.5.4'){
        transitive(false)
     }
+
+    testImplementation 'org.apache.kafka:kafka-streams-test-utils:3.3.1'
 }
 
 test {

@@ -1,5 +1,6 @@
 package com.zzh.readwrite;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.StampedLock;
 
 /**
@@ -16,17 +17,54 @@ public class ReadWriteLock6 {
     //读写锁，饥饿问题，1000线程999个读锁，造成读锁饥饿问题
     /**
      * 读写锁：读读共享 ， 读的时候会阻塞写线程（造成读线程饥饿问题）
-     *
-     * StampedLock: 读的时候，允许写锁的获取，但读锁是需要对结果进行校验
-     *
-     *
-     * **/
+     * <p>
+     * StampedLock: 读的时候，允许写锁的获取，但读锁是需要对结果进行校验（对读锁的优化）
+     * <p>
+     * StampedLock 是对读写锁的升级，（读写锁 读的时候不允许写）
+     **/
 
-    static StampedLock stampedLock=new StampedLock();
+    static StampedLock stampedLock = new StampedLock();
 
     public static void main(String[] args) {
 
-        stampedLock.tryOptimisticRead();
 
+//        stampedLock.tryOptimisticRead();
+
+//      StampedLock 传统的读写模式中，写线程无法在读线程进行的时候获取
+        // 只有当读线程释放之后，写线程才能介入，读写互斥
+        for (int i = 0; i < 10; i++) {
+            new Thread(ReadWriteLock6::read,"A\t"+i).start();
+        }
+
+        for (int i = 0; i < 10; i++) {
+            new Thread(ReadWriteLock6::write,"B\t"+i).start();
+        }
+    }
+
+
+    public static void read() {
+        long stamp = stampedLock.readLock();
+        try {
+            System.out.println(Thread.currentThread().getName() + "读锁进入");
+            TimeUnit.SECONDS.sleep(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            stampedLock.unlockRead(stamp);
+        }
+    }
+
+    public static void write() {
+        long stamp = stampedLock.writeLock();
+        try {
+            System.out.println(Thread.currentThread().getName() + "写锁准备修改");
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } finally {
+            System.out.println(Thread.currentThread().getName() + "写锁完成修改");
+            stampedLock.unlockWrite(stamp);
+
+        }
     }
 }
