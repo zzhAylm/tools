@@ -1,12 +1,8 @@
 package com.zzh.kafka.document2;
 
-import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsBuilder;
-import org.apache.kafka.streams.kstream.*;
-import org.apache.kafka.streams.state.KeyValueStore;
-import org.bouncycastle.util.Bytes;
-
-import java.time.Duration;
+import org.apache.kafka.streams.kstream.KGroupedStream;
+import org.apache.kafka.streams.kstream.KStream;
 
 /**
  * @Description:
