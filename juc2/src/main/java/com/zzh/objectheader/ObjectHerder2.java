@@ -17,6 +17,7 @@ public class ObjectHerder2 {
         // 16个字节
         Object o=new Object();
 
+        String str=new String();
 
         // 8（对象标记）+4（类型指针）+4（number int类型4字节）+1（boolean类型1字节）+7（对齐填充7字节）=24 个字节
         Book book=new Book();

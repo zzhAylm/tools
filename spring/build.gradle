@@ -10,16 +10,17 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.26'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation("org.springframework.boot:spring-boot-starter-web:3.0.0")
-    implementation "org.springframework.boot:spring-boot-starter-security:3.0.0"
+//    implementation "org.springframework.boot:spring-boot-starter-security:3.0.0"
     implementation('org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.5')
     implementation('io.springfox:springfox-swagger2:3.0.0')
     implementation('io.springfox:springfox-swagger-ui:3.0.0')
     implementation('io.springfox:springfox-swagger2:3.0.0')
     implementation("com.alibaba.cloud:spring-cloud-alibaba-dependencies:2.1.0.RELEASE")
-
+    implementation 'com.google.guava:guava:31.1-jre'
 //    implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery")
 }
 
