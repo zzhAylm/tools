@@ -46,6 +46,36 @@ public class Spring1 {
      *
      * AspectJ是一个java实现的AOP框架
      * */
+
+    /**
+     * Spring 循环依赖问题：
+     * Spring只是解决了单例模式下属性依赖的循环问题；Spring为了解决单例的循环依赖问题，使用了三级缓存。
+     *
+     * 第一层缓存（singletonObjects）：单例对象缓存池，已经实例化并且属性赋值，这里的对象是成熟对象；
+     * 第二层缓存（earlySingletonObjects）：单例对象缓存池，已经实例化但尚未属性赋值，这里的对象是半成品对象；
+     * 第三层缓存（singletonFactories）: 单例工厂的缓存
+     *
+     * 分析getSingleton()的整个过程，Spring首先从一级缓存singletonObjects中获取。若是获取不到，而且对象正在建立中，就再从二级缓存earlySingletonObjects中获取。
+     * 若是仍是获取不到且容许singletonFactories经过getObject()获取，就从三级缓存singletonFactory.getObject()(三级缓存)获取，若是获取到了则从三级缓存移动到了二级缓存。
+     *
+     * 此处就是解决循环依赖的关键，这段代码发生在createBeanInstance以后，也就是说单例对象此时已经被建立出来的。这个对象已经被生产出来了，
+     * 虽然还不完美（尚未进行初始化的第二步和第三步），可是已经能被人认出来了（根据对象引用能定位到堆中的对象），因此Spring此时将这个对象提早曝光出来让你们认识，让你们使用。
+     *
+     * */
+    /**
+     * SpringMVC:
+     *
+     * DispatcherServlet :统一的入口 转发给HandlerMapping
+     * HandlerMapping ： 包装请求 （包含一 个Handler 处理器（页面控制器）对象、多个HandlerInterceptor 拦截器）
+     * HandlerAdapter ：   将会把处理器包装为适配器
+     * 处理器（controller）:处理请求
+     *
+     * HandlerMapping是映射处理器
+     * HandlerAdapter是处理适配器，它用来找到你的Controller中的处理方法
+     * HandlerExceptionResolver是当遇到处理异常时的异常解析器
+     * */
+
+
     public static void main(String[] args) {
 
     }

@@ -105,7 +105,49 @@ public class Jvm37 {
      * 本身对象+所有只达对象的集合（只能通过本对象 可达的对象集合）的所有浅堆大小的和
      *
      * */
+
+    /**
+     * Arthas:
+     * 图形话界面的分析需要远程连接， 开通权限
+     *
+     * arthas：命令行交互式模式，在线排查问题，无需重启，动态跟踪Java代码，实时监控JVM状态
+     *
+     * 启动：jar -jar arthas-boot.jar PID
+     * dashboard
+     * thread
+     *
+     * jad demo.MathGame  : 通过 jad 来反编译 Main Class
+     *
+     * 基础指令：help,cat ,echo ,grep ,tee,pwd,cls ,session,history,quit ,stop,keymap
+     * Jvm相关指令：
+     * class加载相关指令：
+     * sc -d java.lang.String： 展示类
+     * sm -d java.lang.String toString ： 展示类的方法
+     *
+     * jad: 反编译已经加载的类的源码，可以是类或者方法
+     *
+     * mc - 内存编译器，内存编译.java文件为.class文件
+     * mc -d /tmp/output /tmp/ClassA.java /tmp/ClassB.java
+     * redefine - 加载外部的.class文件，redefine 到 JVM 里
+     *
+     * jad --source-only com.example.demo.arthas.user.UserController > /tmp/UserController.java
+     * mc /tmp/UserController.java -d /tmp
+     * redefine /tmp/com/example/demo/arthas/user/UserController.class
+     *
+     *
+     * retransform - 加载外部的.class文件，retransform 到 JVM 里
+     *
+     * jad --source-only com.example.demo.arthas.user.UserController > /tmp/UserController.java
+     * mc /tmp/UserController.java -d /tmp
+     * retransform /tmp/com/example/demo/arthas/user/UserController.class
+     *
+     * monitor ,watch,
+     * */
     public static void main(String[] args) {
+
+
+        String str="";
+
 
     }
 }
