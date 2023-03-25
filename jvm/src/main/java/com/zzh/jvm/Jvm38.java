@@ -77,6 +77,19 @@ public class Jvm38 {
      * kill -9 $pid
      * cd /home/app/sxpservice/bin;
      * sh run.sh
+     *
+     *
+     * 如果使用的是G1垃圾收集器，不建议使用-Xmn 和-XX:NewRatio 来设置新生代的大小和新生代的与老年代的比例
+     * */
+
+    /**
+     * GC日志：
+     *
+     * Allocation failure : 年轻代没有足够的内存分配对象，导致的垃圾回收
+     *
+     *
+     * -Xloggc:/Usrs/zzh/Desktop/xxx.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC
+     *
      * */
     public static void main(String[] args) {
 

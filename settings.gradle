@@ -7,4 +7,5 @@ include 'hutool'
 include 'spring'
 include 'disruptor'
 include 'jvm'
+include 'spring-boot'
 
