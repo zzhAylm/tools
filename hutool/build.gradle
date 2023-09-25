@@ -17,6 +17,9 @@ dependencies {
     implementation 'com.google.guava:guava:32.0.0-jre'
     implementation 'redis.clients:jedis:3.7.0'
     implementation("commons-lang:commons-lang:2.6")
+    implementation 'org.redisson:redisson:3.23.4'
+    implementation('org.redisson:redisson-spring-boot-starter:3.23.4')
+    implementation("com.xuxueli:xxl-job-core:2.3.0")
 }
 
 test {
