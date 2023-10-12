@@ -13,10 +13,11 @@ import org.springframework.context.ApplicationContext;
  * @Author: zzh
  * @Crete ${DATE} ${TIME}
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.zzh")
 public class SpringBootMainApplication {
 
     private static final Logger log = LogManager.getLogger(SpringBootMainApplication.class);
+
     public static void main(String[] args) {
         try {
             SpringApplicationBuilder builder = new SpringApplicationBuilder(SpringBootMainApplication.class);

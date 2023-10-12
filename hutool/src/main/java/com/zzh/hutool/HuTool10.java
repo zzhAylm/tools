@@ -11,5 +11,8 @@ public class HuTool10 {
     public static void main(String[] args) {
 
         System.out.println("zzh".equals(null));
+
+        String zzhaylm = "zzhaylm";
+        System.out.println(zzhaylm.substring(0, zzhaylm.length() - 1));
     }
 }
