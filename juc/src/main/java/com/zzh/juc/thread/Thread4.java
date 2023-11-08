@@ -24,6 +24,7 @@ public class Thread4 {
         // ，然后更改新的内容，修改完成后，将指针指向新的内存（覆盖之前的集合数据）
         //并发的读，独立写
         List<String> list=new CopyOnWriteArrayList<>();
+        String s = list.get(0);
         for (int i = 0; i < 30; i++) {
             new Thread(() ->{
                 list.add(UUID.randomUUID().toString().substring(8));

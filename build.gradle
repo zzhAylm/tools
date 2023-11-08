@@ -1,7 +1,10 @@
 plugins {
     id 'java'
 }
-
+java {
+    sourceCompatibility = "17.PREVIEW"
+    targetCompatibility = "17.PREVIEW"
+}
 group 'com.zzh'
 version '1.0-SNAPSHOT'
 

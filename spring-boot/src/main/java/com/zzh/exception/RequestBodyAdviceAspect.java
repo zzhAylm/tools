@@ -55,7 +55,7 @@ public class RequestBodyAdviceAspect extends RequestBodyAdviceAdapter {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ResponseDto<Object> onMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        log.error("参数校验异常",e);
+        log.error("参数校验异常", e);
         Map<String, String> errors = new HashMap<>();
         e.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
@@ -69,7 +69,7 @@ public class RequestBodyAdviceAspect extends RequestBodyAdviceAdapter {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ResponseDto<Object> onConstraintViolationException(ConstraintViolationException e) {
-        log.error("参数校验异常",e);
+        log.error("参数校验异常", e);
         Map<String, String> errors = new HashMap<>();
         e.getConstraintViolations().forEach((error) -> {
             errors.put(String.valueOf(error.getPropertyPath()), error.getMessage());
@@ -81,7 +81,7 @@ public class RequestBodyAdviceAspect extends RequestBodyAdviceAdapter {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ResponseDto<Object> otherException(Exception e) {
-        log.error("发生其他异常",e);
-        return ResponseDto.build(HttpStatus.BAD_REQUEST.value(), e.getMessage(), e);
+        log.error("未知异常", e);
+        return ResponseDto.build(HttpStatus.BAD_REQUEST.value(), e.getMessage(), null);
     }
 }

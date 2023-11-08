@@ -5,8 +5,8 @@ import com.zzh.domain.User;
 import com.zzh.dto.RequestDto;
 import com.zzh.dto.ResponseDto;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/validate")
 @Validated
-@ResponseBody
 public class ValidateController {
 
 
     @PostMapping("test1")
-    public ResponseDto<User> validate(@RequestBody @Valid RequestDto<User> requestDto) {
+    public ResponseDto<User> validate(@Valid  @RequestBody RequestDto<User> requestDto) {
         log.info("user ={}", JSONUtil.toJsonStr(requestDto));
         return ResponseDto.build(200, "success", requestDto.getData());
     }
@@ -36,7 +35,7 @@ public class ValidateController {
     }
 
     @PostMapping("test3")
-    public ResponseDto<Object> validate(@RequestBody  @Valid User user) {
+    public ResponseDto<Object> validate(@RequestBody @Valid User user) {
         log.info("user ={}", JSONUtil.toJsonStr(user));
         return ResponseDto.build(200, "success", user);
     }
