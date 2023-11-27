@@ -8,6 +8,15 @@ spring:
     url: jdbc:mysql://localhost:3306
     username: root
     password: 123456
+  rabbitmq:
+    host: localhost
+    virtual-host: /
+    username: guest
+    password: guest
+    port: 5672
+    listener:
+      simple:
+        prefetch: 1 #每次只能获取一条数据，处理完后才会获取下一条数据，实现能者多劳，解决消费者处理速度慢但还依旧取消息，造成处理时间变长,
 logging:
   level:
     root: info

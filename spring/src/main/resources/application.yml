@@ -3,3 +3,12 @@ spring:
     user:
       name: admin
       password: 123456
+logging:
+  level:
+    root: info
+  pattern:
+    console:
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB
+

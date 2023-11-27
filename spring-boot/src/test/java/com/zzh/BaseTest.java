@@ -13,6 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.util.Assert;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -131,11 +132,20 @@ public class BaseTest {
 //                System.out.println(33333);
 //            }
         } catch (Exception e) {
-           log.error("error",e);
+            log.error("error", e);
             System.out.println("errrrrrrrr");
         } finally {
             System.out.println("4444444");
         }
         System.out.println("6666666");
+    }
+
+    @Test
+    public void assertTest() {
+        String str = "zzj";
+        String str2 = "";
+        Assert.hasLength(str2, "不能为空");
+        Assert.notNull(str2, "str 不能为空");
+        System.out.println("断言后内容");
     }
 }

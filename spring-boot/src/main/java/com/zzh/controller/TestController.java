@@ -1,6 +1,7 @@
 package com.zzh.controller;
 
 import cn.hutool.json.JSONUtil;
+import com.zzh.annotation.Logger;
 import com.zzh.dto.RequestDto;
 import com.zzh.dto.ResponseDto;
 import jakarta.servlet.http.HttpServletResponse;
@@ -35,5 +36,12 @@ public class TestController {
     public ResponseDto<String> refreshTarget(HttpServletResponse response) {
         response.setHeader("Refresh", "5;URL=http://localhost:8080/test/refresh");
         return ResponseDto.success("refresh target");
+    }
+
+    @Logger(value = "do logger")
+    @GetMapping("/aop")
+    public ResponseDto<String> testAop(String name,String addr){
+        System.out.println("logger aop test....");
+        return ResponseDto.success("name"+name+",addr"+addr);
     }
 }

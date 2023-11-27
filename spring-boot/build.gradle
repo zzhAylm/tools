@@ -24,6 +24,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-actuator")
     implementation 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("com.baomidou:mybatis-plus-boot-starter:3.5.0")
     implementation("org.apache.velocity:velocity-engine-core:2.3")
     implementation("org.freemarker:freemarker:2.3.32")
@@ -47,6 +48,7 @@ dependencies {
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'junit:junit'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
     testImplementation 'org.springframework.security:spring-security-test'
