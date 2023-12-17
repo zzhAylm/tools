@@ -17,6 +17,17 @@ spring:
     listener:
       simple:
         prefetch: 1 #每次只能获取一条数据，处理完后才会获取下一条数据，实现能者多劳，解决消费者处理速度慢但还依旧取消息，造成处理时间变长,
+#     消息发送到交换机后，发送到那个队列失败回掉
+    publisher-returns: true
+#     消息发送到交换机失败回掉 ack nack
+    publisher-confirm-type: correlated
+    template:
+      mandatory: true
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
 logging:
   level:
     root: info

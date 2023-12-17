@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: SpringCloudAlibabaApplication
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080

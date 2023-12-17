@@ -148,4 +148,17 @@ public class BaseTest {
         Assert.notNull(str2, "str 不能为空");
         System.out.println("断言后内容");
     }
+
+
+
+    @Test
+    public void booleanTest(){
+
+        System.out.println("true".equalsIgnoreCase(null));
+        System.out.println("true".equalsIgnoreCase("TRUE"));
+        System.out.println("true".equalsIgnoreCase("true"));
+        System.out.println("true".equalsIgnoreCase("false"));
+        System.out.println("true".equalsIgnoreCase("false"));
+
+    }
 }

@@ -11,4 +11,5 @@ include 'spring-boot'
 include 'reflection'
 include 'algorithm'
 include 'java'
+include 'spring-cloud-alibaba'
 
