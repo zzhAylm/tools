@@ -12,4 +12,5 @@ include 'reflection'
 include 'algorithm'
 include 'java'
 include 'spring-cloud-alibaba'
+include 'spring-boot-websocket'
 

@@ -1,0 +1,5 @@
+server:
+  port: ${port:8080}
+spring:
+  profiles:
+    active: ${active:dev}

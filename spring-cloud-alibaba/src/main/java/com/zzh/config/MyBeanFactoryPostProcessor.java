@@ -19,6 +19,7 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         int beanDefinitionCount = beanFactory.getBeanDefinitionCount();
+        Object rejectPushExecutor = beanFactory.getBean("rejectPushExecutor");
         logger.info("Bean定义个数: " + beanDefinitionCount);
     }
 
