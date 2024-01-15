@@ -13,4 +13,5 @@ include 'algorithm'
 include 'java'
 include 'spring-cloud-alibaba'
 include 'spring-boot-websocket'
+include 'spring-boot-3'
 
