@@ -6,12 +6,16 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
 /**
  * @Description:
  * @Author: zzh
  * @Crete ${DATE} ${TIME}
  */
+@EnableKafka
+@EnableMethodSecurity
 @SpringBootApplication
 public class SpringBoot3Application {
     private static final Logger log = LogManager.getLogger(SpringBoot3Application.class);

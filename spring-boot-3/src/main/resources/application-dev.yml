@@ -19,3 +19,5 @@ spring:
         yaml: text/yaml
     problemdetails:
       enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092

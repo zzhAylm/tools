@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +35,7 @@ public class TestController {
     @GetMapping("/request")
     public void request() {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        Assert.notNull(requestAttributes, "requestAttributes is empty!");
         HttpServletRequest request = requestAttributes.getRequest();
         HttpServletResponse response = requestAttributes.getResponse();
         log.info("test ={}", this);
@@ -43,6 +46,13 @@ public class TestController {
     @GetMapping("/error")
     public ResponseEntity<String> error() {
 
+        log.info("test ={}", this);
+        return ResponseEntity.ok("body");
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping("/auth")
+    public ResponseEntity<String> auth(){
         log.info("test ={}", this);
         return ResponseEntity.ok("body");
     }
