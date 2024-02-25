@@ -1,4 +1,4 @@
-package com.zzh.algorithm;
+package com.zzh.algorithm.other;
 
 import java.util.Arrays;
 import java.util.LinkedList;

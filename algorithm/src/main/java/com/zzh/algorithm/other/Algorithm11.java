@@ -1,4 +1,4 @@
-package com.zzh.algorithm;
+package com.zzh.algorithm.other;
 
 /**
  * @Description: 两两交换链表中的节点

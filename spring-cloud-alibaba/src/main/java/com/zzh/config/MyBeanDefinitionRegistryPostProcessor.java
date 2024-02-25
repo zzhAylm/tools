@@ -27,4 +27,9 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 
     }
+
+
+
+
+
 }

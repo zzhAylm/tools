@@ -1,4 +1,4 @@
-package com.zzh.algorithm;
+package com.zzh.algorithm.other;
 
 /**
  * @Description: 长度最小的子数组

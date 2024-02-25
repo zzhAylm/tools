@@ -1,11 +1,11 @@
-package com.zzh.algorithm;
+package com.zzh.algorithm.other;
 
 /**
- * @Description: 反转
+ * @Description: 倒数地K个节点
  * @Author: zzh
  * @Crete 2023/8/17 18:52
  */
-public class Algorithm01 {
+public class Algorithm02 {
 
     public static void main(String[] args) {
         Node node = new Node();
@@ -18,21 +18,10 @@ public class Algorithm01 {
         node.next.next.next.value = "4";
         node.next.next.next.next = new Node();
         node.next.next.next.next.value = "5";
-        print(ReverseList(node));
+        print(node);
     }
 
-    public static Node ReverseList(Node node) {
-        Node header = node;
-        Node next = null;
-        Node pre = null;
-        while (header != null) {
-            next = header.next;
-            header.next = pre;
-            pre = header;
-            header = next;
-        }
-        return pre;
-    }
+
 
     public static class Node {
         private String value;
@@ -45,6 +34,8 @@ public class Algorithm01 {
             header = header.next;
         }
     }
+
+
 
 
 

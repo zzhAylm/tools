@@ -1,4 +1,4 @@
-package com.zzh.algorithm;
+package com.zzh.algorithm.other;
 
 /**
  * @Description: 重复的子字符串
