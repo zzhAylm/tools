@@ -1,0 +1,26 @@
+# db config
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/vhr?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true
+    # 设置迁移时的编码，默认UTF-8.
+    encoding: UTF-8
+    # 可以支持多个location, 用','隔开
+    locations: classpath:db/migration
+    # migrate是否校验
+    validate-on-migrate: true
+    # 禁止清理数据库表
+    clean-disabled: true
+    # 开始执行基准迁移时对现有的schema的版本打标签，默认值为1.
+    baseline-version: 0
+    #当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.
+    baseline-on-migrate: true
+    #迁移时使用的目标版本
+    target: latest
+    #定需要flyway迁移的schema，大小写敏感，默认为连接默认的schema.
+#    schemas: test
+
