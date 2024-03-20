@@ -37,7 +37,7 @@ public class Algorithm09 {
 
     // 选排列
     public List<List<Integer>> permute1(int[] nums) {
-        boolean[] used = new boolean[ nums.length];
+        boolean[] used = new boolean[nums.length];
         Arrays.fill(used, false);
         resource(nums, used, new LinkedList<>());
         return result;
@@ -61,5 +61,31 @@ public class Algorithm09 {
 
     }
 
+    List<List<Integer>> list = new ArrayList<>();
 
+    //LCR 083. 全排列
+    public List<List<Integer>> permute2(int[] nums) {
+
+        boolean[] used = new boolean[nums.length];
+        Arrays.fill(used, false);
+        backtrace(nums, used, new LinkedList<>());
+        return list;
+    }
+
+    // 回溯
+    public void backtrace(int[] nums, boolean[] used, LinkedList<Integer> res) {
+        if (nums.length == res.size()) {
+            list.add(new ArrayList<>(res));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (!used[i]) {
+                res.add(nums[i]);
+                used[i] = true;
+                backtrace(nums, used,  res);
+                used[i] = false;
+                res.removeLast();
+            }
+        }
+    }
 }

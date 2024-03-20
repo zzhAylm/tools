@@ -96,5 +96,33 @@ public class Algorithm08 {
         return (dp[amount] == amount + 1) ? -1 : dp[amount];
     }
 
+    //LCR 103. 零钱兑换
 
+    public static int coinChange3(int[] coins, int amount) {
+
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        for (int i = 1; i < dp.length; i++) {
+            int res = Integer.MAX_VALUE;
+            for (int coin : coins) {
+                if (i - coin < 0) {
+                    continue;
+                }
+                int count = dp[i - coin];
+                if (count == -1) {
+                    continue;
+                }
+                res = Math.min(res, count + 1);
+            }
+            dp[i] = res == Integer.MAX_VALUE ? -1 : res;
+        }
+        return dp[amount];
+    }
+
+    public static void main(String[] args) {
+        int[] coins = new int[]{1, 2, 5};
+        System.out.println(coinChange3(coins, 11));
+
+    }
 }

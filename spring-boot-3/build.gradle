@@ -28,6 +28,7 @@ dependencies {
     api("io.micrometer:micrometer-registry-prometheus")
     api('io.github.mweirauch:micrometer-jvm-extras:0.2.2')
     api("org.aspectj:aspectjweaver:1.9.19")
+    api("org.springframework.boot:spring-boot-starter-thymeleaf")
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testCompileOnly("org.projectlombok:lombok")
