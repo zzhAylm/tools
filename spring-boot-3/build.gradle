@@ -9,7 +9,7 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = '17'
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://g.spring.io/milestone' }
     maven { url 'https://repo.spring.io/snapshot' }
 }
 
@@ -29,6 +29,7 @@ dependencies {
     api('io.github.mweirauch:micrometer-jvm-extras:0.2.2')
     api("org.aspectj:aspectjweaver:1.9.19")
     api("org.springframework.boot:spring-boot-starter-thymeleaf")
+    api 'org.redisson:redisson-spring-boot-starter:3.27.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testCompileOnly("org.projectlombok:lombok")
@@ -37,6 +38,8 @@ dependencies {
     testCompileOnly("org.springframework.boot:spring-boot-starter-test")
     testAnnotationProcessor("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    api("org.apache.poi:poi-ooxml:5.2.3")
+    api("org.springframework.boot:spring-boot-starter-quartz")
 }
 
 test {

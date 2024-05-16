@@ -21,3 +21,11 @@ spring:
       enabled: true
   kafka:
     bootstrap-servers: localhost:9092
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+  quartz:
+    auto-startup: true
+    scheduler-name: scheduler
+

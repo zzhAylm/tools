@@ -29,3 +29,17 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+//  强制版本：修改插件制定的版本号
+//dependencyManagement {
+//    dependencies {
+//        dependency 'org.apache.kafka:kafka-clients:3.4.0'
+//    }
+//}
+
+// 引入物料清单
+//dependencyManagement {
+//    imports {
+//        mavenBom "com.suixingpay:dependencies:${suixingpayVersion}"
+//    }
+//    resolutionStrategy { cacheChangingModulesFor 0, 'seconds' }
+//}

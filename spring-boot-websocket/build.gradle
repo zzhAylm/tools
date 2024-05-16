@@ -28,6 +28,7 @@ dependencies {
     implementation("junit:junit:4.13.2")
     implementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     implementation("org.springframework:spring-test:6.0.2")
+    implementation("io.netty:netty-all:5.0.0.Alpha2")
 }
 
 test {
